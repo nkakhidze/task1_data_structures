@@ -28,7 +28,7 @@ time_sorted = (sorted_fast_time_stop - sorted_fast_time_start) * 1000
 print("для функции 'sorted' время сортировки:", )
 
 
-sorted_fast_time_start = time.perf_counter()
+sorted_low_time_start = time.perf_counter()
 for i in range(0, len(b)):
     # print('i =', b[i])
     for j in range(i+1, len(b)):
@@ -37,9 +37,9 @@ for i in range(0, len(b)):
             b[i], b[j] = b[j], b[i]
         # print('j =', b[j], end=' ')
     # print()
-sorted_fast_time_stop = time.perf_counter()
+sorted_low_time_stop = time.perf_counter()
 print(b)
-time_puzirek = (sorted_fast_time_stop - sorted_fast_time_start) * 1000
+time_puzirek = (sorted_low_time_stop - sorted_low_time_start) * 1000
 print("для функции 'типа пузырёк' время сортировки:", time_puzirek)
 
 # 4. Измеряет время выполнения каждой операции сортировки
