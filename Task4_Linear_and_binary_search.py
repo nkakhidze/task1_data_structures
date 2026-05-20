@@ -17,10 +17,23 @@ def binar_finder(n: int, listik: list):
     left = 0
     right = len(listik) - 1
     mid = (left + right) // 2
+    print("первое среднее значение", mid,listik[mid]) #1
+
     while left < right:
+        mid = (left + right) // 2
+        print('это mid', mid,listik[mid])
         schtchk += 1
         if listik[mid] == n:
-            return f"linear_finder: число {n} было в вашем списке на позиции {i} при сортировке списка по возрастанию.\nЧисло было найдено с {schtchk} попытки"
+            return f"binar_finder: число {n} было в вашем списке на позиции {mid} при сортировке списка по возрастанию.\nЧисло было найдено с {schtchk} попытки"
+        if listik[mid] > n:
+            right = mid
+            print("new right",right)
+            print('при новом right значение', listik[right])
+        else:
+            left = mid
+            print("new left", left)
+            print('при новом left значение', listik[left])
+
 
 
 
@@ -29,7 +42,5 @@ def binar_finder(n: int, listik: list):
 # 4. Объясните, почему бинарный поиск работает быстрее
 
 
-print("сортировке списка по возрастанию. \n Число было найдено с {schtchk} попытки")
-
-a=[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21]
-print(binar_finder(17, a))
+a=[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20]
+print(binar_finder(4, a))
