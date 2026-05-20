@@ -4,6 +4,7 @@
 import random
 import time
 
+
 def rand_10x():
     a = []
     for i in range(10):
@@ -11,6 +12,7 @@ def rand_10x():
     return a
 
 a = rand_10x()
+b = a.copy()
 
 # 2. Находит максимальное и минимальное значение
 a_min = min(a)
@@ -22,20 +24,24 @@ print(sorted_fast_time_start)
 a_sorted_fast = sorted(a)
 sorted_fast_time_stop = time.perf_counter()
 print(sorted_fast_time_stop)
-print((sorted_fast_time_stop - sorted_fast_time_start) * 1000)
+time_sorted = (sorted_fast_time_stop - sorted_fast_time_start) * 1000
+print("для функции 'sorted' время сортировки:", )
 
 
-b = [9, 1, 5, 10]
-
-for i in range(len(b)):
-    print('i =', b[i])
-    for j in range(1, len(b)):
+sorted_fast_time_start = time.perf_counter()
+for i in range(0, len(b)):
+    # print('i =', b[i])
+    for j in range(i+1, len(b)):
+        # print('j =', b[j],"*")
         if b[i] > b[j]:
             b[i], b[j] = b[j], b[i]
-        print('j =', b[j], end=' ')
-    print()
-
+        # print('j =', b[j], end=' ')
+    # print()
+sorted_fast_time_stop = time.perf_counter()
 print(b)
-
+time_puzirek = (sorted_fast_time_stop - sorted_fast_time_start) * 1000
+print("для функции 'типа пузырёк' время сортировки:", time_puzirek)
 
 # 4. Измеряет время выполнения каждой операции сортировки
+
+print(f"функция 'sorted' отрабатывает быстрее функции 'типа пузырёк' для списка длиной {len(a)} в {time_sorted / time_puzirek} раз")
