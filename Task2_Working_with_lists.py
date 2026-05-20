@@ -25,7 +25,7 @@ a_sorted_fast = sorted(a)
 sorted_fast_time_stop = time.perf_counter()
 print(sorted_fast_time_stop)
 time_sorted = (sorted_fast_time_stop - sorted_fast_time_start) * 1000
-print("для функции 'sorted' время сортировки:", )
+print("для функции 'sorted' время сортировки:", time_sorted)
 
 
 sorted_low_time_start = time.perf_counter()
