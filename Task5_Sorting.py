@@ -30,83 +30,84 @@ def sort_pasting(massiv:list):
 
 
 # 3. Сравните их с встроенной функцией sorted()
-a = [1, 0, 24, 2, 5, 0, 12]
-b, c, d = a.copy(), a.copy(), a.copy()
-b = sort_bubbling(b)
-c = sort_pasting(c)
-d = sorted(d)
-print(a)
-print(b)
-print(c)
-print(d)
+if __name__ == "__main__":
+    a = [1, 0, 24, 2, 5, 0, 12]
+    b, c, d = a.copy(), a.copy(), a.copy()
+    b = sort_bubbling(b)
+    c = sort_pasting(c)
+    d = sorted(d)
+    print(a)
+    print(b)
+    print(c)
+    print(d)
 
-print(b == c == d)
+    print(b == c == d)
 
 # 4. Измерьте время выполнения для разных размеров входных данных
 
 def fill_list(n):
     return [random.randint(-500, 500) for _ in range(n)]
 
-
-a = fill_list(10)
-b, c, d = a.copy(), a.copy(), a.copy()
-
-
-sort_bubbling_time_start = time.perf_counter()
-b = sort_bubbling(b)
-sort_bubbling_time_stop = time.perf_counter()
-print("Пузырёк, 10 эл-в —", (sort_bubbling_time_stop - sort_bubbling_time_start) * 1000, "мс")
-
-sort_pasting_time_start = time.perf_counter()
-c = sort_pasting(c)
-sort_pasting_time_stop = time.perf_counter()
-print("Вставки, 10 эл-в — ", (sort_pasting_time_stop - sort_pasting_time_start) * 1000, "мс")
-
-sorted_time_start = time.perf_counter()
-d = sorted(d)
-sorted_time_stop = time.perf_counter()
-print("sorted, 10 эл-в — ", (sorted_time_stop - sorted_time_start) * 1000, "мс")
-
-print("_________________________")
-
-a = fill_list(100)
-b, c, d = a.copy(), a.copy(), a.copy()
+if __name__ == "__main__":
+    a = fill_list(10)
+    b, c, d = a.copy(), a.copy(), a.copy()
 
 
-sort_bubbling_time_start = time.perf_counter()
-b = sort_bubbling(b)
-sort_bubbling_time_stop = time.perf_counter()
-print("Пузырёк, 100 эл-в —", (sort_bubbling_time_stop - sort_bubbling_time_start) * 1000, "мс")
+    sort_bubbling_time_start = time.perf_counter()
+    b = sort_bubbling(b)
+    sort_bubbling_time_stop = time.perf_counter()
+    print("Пузырёк, 10 эл-в —", (sort_bubbling_time_stop - sort_bubbling_time_start) * 1000, "мс")
 
-sort_pasting_time_start = time.perf_counter()
-c = sort_pasting(c)
-sort_pasting_time_stop = time.perf_counter()
-print("Вставки, 100 эл-в — ", (sort_pasting_time_stop - sort_pasting_time_start) * 1000, "мс")
+    sort_pasting_time_start = time.perf_counter()
+    c = sort_pasting(c)
+    sort_pasting_time_stop = time.perf_counter()
+    print("Вставки, 10 эл-в — ", (sort_pasting_time_stop - sort_pasting_time_start) * 1000, "мс")
 
-sorted_time_start = time.perf_counter()
-d = sorted(d)
-sorted_time_stop = time.perf_counter()
-print("sorted, 100 эл-в — ", (sorted_time_stop - sorted_time_start) * 1000, "мс")
+    sorted_time_start = time.perf_counter()
+    d = sorted(d)
+    sorted_time_stop = time.perf_counter()
+    print("sorted, 10 эл-в — ", (sorted_time_stop - sorted_time_start) * 1000, "мс")
 
-print("_________________________")
+    print("_________________________")
 
-a = fill_list(5000)
-b, c, d = a.copy(), a.copy(), a.copy()
+    a = fill_list(100)
+    b, c, d = a.copy(), a.copy(), a.copy()
 
 
-sort_bubbling_time_start = time.perf_counter()
-b = sort_bubbling(b)
-sort_bubbling_time_stop = time.perf_counter()
-print("Пузырёк, 5000 эл-в —", (sort_bubbling_time_stop - sort_bubbling_time_start) * 1000, "мс")
+    sort_bubbling_time_start = time.perf_counter()
+    b = sort_bubbling(b)
+    sort_bubbling_time_stop = time.perf_counter()
+    print("Пузырёк, 100 эл-в —", (sort_bubbling_time_stop - sort_bubbling_time_start) * 1000, "мс")
 
-sort_pasting_time_start = time.perf_counter()
-c = sort_pasting(c)
-sort_pasting_time_stop = time.perf_counter()
-print("Вставки, 5000 эл-в — ", (sort_pasting_time_stop - sort_pasting_time_start) * 1000, "мс")
+    sort_pasting_time_start = time.perf_counter()
+    c = sort_pasting(c)
+    sort_pasting_time_stop = time.perf_counter()
+    print("Вставки, 100 эл-в — ", (sort_pasting_time_stop - sort_pasting_time_start) * 1000, "мс")
 
-sorted_time_start = time.perf_counter()
-d = sorted(d)
-sorted_time_stop = time.perf_counter()
-print("sorted, 5000 эл-в — ", (sorted_time_stop - sorted_time_start) * 1000, "мс")
+    sorted_time_start = time.perf_counter()
+    d = sorted(d)
+    sorted_time_stop = time.perf_counter()
+    print("sorted, 100 эл-в — ", (sorted_time_stop - sorted_time_start) * 1000, "мс")
 
-print("_________________________")
+    print("_________________________")
+
+    a = fill_list(5000)
+    b, c, d = a.copy(), a.copy(), a.copy()
+
+
+    sort_bubbling_time_start = time.perf_counter()
+    b = sort_bubbling(b)
+    sort_bubbling_time_stop = time.perf_counter()
+    print("Пузырёк, 5000 эл-в —", (sort_bubbling_time_stop - sort_bubbling_time_start) * 1000, "мс")
+
+    sort_pasting_time_start = time.perf_counter()
+    c = sort_pasting(c)
+    sort_pasting_time_stop = time.perf_counter()
+    print("Вставки, 5000 эл-в — ", (sort_pasting_time_stop - sort_pasting_time_start) * 1000, "мс")
+
+    sorted_time_start = time.perf_counter()
+    d = sorted(d)
+    sorted_time_stop = time.perf_counter()
+    print("sorted, 5000 эл-в — ", (sorted_time_stop - sorted_time_start) * 1000, "мс")
+
+    print("_________________________")

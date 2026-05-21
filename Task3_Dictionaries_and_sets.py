@@ -51,5 +51,5 @@ for name in dictik.keys():
     setik = setik | set(dictik[name]["оценки"])
     # print(setik)
 
-
+print(setik)
 # 4. Демонстрирует разницу между списком и множеством при поиске элементов
