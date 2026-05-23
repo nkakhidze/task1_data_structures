@@ -20,10 +20,10 @@ a_max = max(a)
 
 # 3. Сортирует список двумя разными способами
 sorted_fast_time_start = time.perf_counter()
-print(sorted_fast_time_start)
+# print(sorted_fast_time_start)
 a_sorted_fast = sorted(a)
 sorted_fast_time_stop = time.perf_counter()
-print(sorted_fast_time_stop)
+# print(sorted_fast_time_stop)
 time_sorted = (sorted_fast_time_stop - sorted_fast_time_start) * 1000
 print("для функции 'sorted' время сортировки:", time_sorted)
 
